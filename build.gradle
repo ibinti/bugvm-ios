@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        bugVMVersion = "1.2.3-SNAPSHOT"
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+    dependencies {
+        classpath "com.bugvm:bugvm-gradle:${bugVMVersion}"
+    }
+}
+
+apply plugin: "java"
+apply plugin: "bugvm"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+dependencies {
+    compile "com.bugvm:bugvm-rt:${bugVMVersion}"
+    compile "com.bugvm:bugvm-apple:${bugVMVersion}"
+}
+
+task sim {
+    dependsOn launchIPhoneSimulator, build, clean
+    launchIPhoneSimulator.mustRunAfter build
+    build.mustRunAfter clean
+}
+
+task device {
+    dependsOn launchIOSDevice, build, clean
+    launchIOSDevice.mustRunAfter build
+    build.mustRunAfter clean
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.3'
+}
