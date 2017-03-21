@@ -1,9 +1,9 @@
 buildscript {
     ext {
-        bugVMVersion = "1.2.3-SNAPSHOT"
+        bugVMVersion = "1.1.19-SNAPSHOT"
     }
     repositories {
-        mavenLocal()
+        //mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
@@ -16,7 +16,7 @@ apply plugin: "java"
 apply plugin: "bugvm"
 
 repositories {
-    mavenLocal()
+    //mavenLocal()
     mavenCentral()
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
@@ -32,13 +32,13 @@ task sim {
     build.mustRunAfter clean
 }
 
-task device {
+task dev {
     dependsOn launchIOSDevice, build, clean
     launchIOSDevice.mustRunAfter build
     build.mustRunAfter clean
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "3.4"
+    gradleVersion = "3.4.1"
     distributionType = Wrapper.DistributionType.ALL
 }

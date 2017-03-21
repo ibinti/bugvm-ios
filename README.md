@@ -11,7 +11,7 @@ Launch the app to the Simulator
 ./gradlew sim
 ```
 
-Install the app to the iPhone
+Install the app to the iPhone or iPad
  ```
- ./gradlew device
+ ./gradlew dev
  ```

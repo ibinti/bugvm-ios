@@ -7,7 +7,7 @@ import com.bugvm.apple.uikit.UIApplicationLaunchOptions;
 import com.bugvm.apple.uikit.UIScreen;
 import com.bugvm.apple.uikit.UIWindow;
 
-public class Ontology extends UIApplicationDelegateAdapter {
+public class LadyBug extends UIApplicationDelegateAdapter {
     private UIWindow window;
     private MyViewController rootViewController;
 
@@ -28,7 +28,7 @@ public class Ontology extends UIApplicationDelegateAdapter {
 
     public static void main(String[] args) {
         NSAutoreleasePool pool=new NSAutoreleasePool();
-        UIApplication.main(args,null,Ontology.class);
+        UIApplication.main(args,null,LadyBug.class);
         pool.close();
     }
 }
