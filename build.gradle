@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        bugVMVersion = "1.2.3"
+        bugvm_version = "1.2.3"
     }
     repositories {
         mavenLocal()
@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.bugvm:bugvm-gradle:${bugVMVersion}"
+        classpath "com.bugvm:bugvm-gradle:${bugvm_version}"
     }
 }
 
@@ -22,12 +22,18 @@ repositories {
 }
 
 dependencies {
-    compile "com.bugvm:bugvm-rt:${bugVMVersion}"
-    compile "com.bugvm:bugvm-apple:${bugVMVersion}"
+    compile "com.bugvm:bugvm-rt:${bugvm_version}"
+    compile "com.bugvm:bugvm-apple:${bugvm_version}"
 }
 
 task sim {
     dependsOn launchIPhoneSimulator, build, clean
+    launchIPhoneSimulator.mustRunAfter build
+    build.mustRunAfter clean
+}
+
+task pad {
+    dependsOn launchIPadSimulator, build, clean
     launchIPhoneSimulator.mustRunAfter build
     build.mustRunAfter clean
 }
