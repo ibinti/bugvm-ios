@@ -14,8 +14,6 @@ import com.bugvm.apple.uikit.UIView;
 import com.bugvm.apple.uikit.UIViewController;
 
 public class MyViewController extends UIViewController {
-    private final UIButton button;
-    private final UILabel label;
     private int clickCount;
 
     public MyViewController() {
@@ -26,22 +24,20 @@ public class MyViewController extends UIViewController {
         view.setBackgroundColor(UIColor.white());
 
         // Setup label.
-        label = new UILabel(new CGRect(20, 250, 280, 44));
+        UILabel label = new UILabel(new CGRect(20, 250, 280, 44));
         label.setFont(UIFont.getSystemFont(24));
         label.setTextAlignment(NSTextAlignment.Center);
         view.addSubview(label);
 
         // Setup button.
-        button = new UIButton(UIButtonType.RoundedRect);
+        UIButton button = new UIButton(UIButtonType.RoundedRect);
         button.setFrame(new CGRect(60, 150, 180, 40));
         button.setTitle("Catch me!", UIControlState.Normal);
         button.getTitleLabel().setFont(UIFont.getBoldSystemFont(22));
+        button.addOnTouchUpInsideListener((UIControl control, UIEvent event) -> {
 
-        button.addOnTouchUpInsideListener(new UIControl.OnTouchUpInsideListener() {
-            @Override
-            public void onTouchUpInside (UIControl control, UIEvent event) {
                 label.setText("Number of try: " + (++clickCount));
-            }
+
         });
         view.addSubview(button);
     }
