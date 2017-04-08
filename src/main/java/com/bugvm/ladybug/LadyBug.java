@@ -8,16 +8,13 @@ import com.bugvm.apple.uikit.UIScreen;
 import com.bugvm.apple.uikit.UIWindow;
 
 public class LadyBug extends UIApplicationDelegateAdapter {
-    private UIWindow window;
-    private MyViewController rootViewController;
 
-    @Override
-    public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
+    @Override public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
         // Set up the view controller.
-        rootViewController = new MyViewController();
+        MyViewController rootViewController = new MyViewController();
 
         // Create a new window at screen size.
-        window = new UIWindow(UIScreen.getMainScreen().getBounds());
+        UIWindow window = new UIWindow(UIScreen.getMainScreen().getBounds());
         // Set the view controller as the root controller for the window.
         window.setRootViewController(rootViewController);
         // Make the window visible.
@@ -31,4 +28,5 @@ public class LadyBug extends UIApplicationDelegateAdapter {
         UIApplication.main(args,null,LadyBug.class);
         pool.close();
     }
+
 }
