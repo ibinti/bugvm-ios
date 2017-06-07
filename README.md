@@ -1,22 +1,18 @@
-# BugVM iOS Sample App
+# BugVM iOS Examples
+
+### Git Clone
 
 ```
 git clone https://github.com/bugvm/bugvm-ios
 
-cd bugvm-ios
 ```
 
-Launch the app to the iPhone Simulator
+### Kotlin Example
 ```
-./gradlew -q sim
-```
-
-Launch the app to the iPad Simulator
-```
-./gradlew -q pad
+cd bugvm-ios/Kotlin
 ```
 
-Install the app to the iPhone or iPad
- ```
- ./gradlew -q dev
- ```
+### Java Example
+```
+cd bugvm-ios/Java
+```
