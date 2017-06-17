@@ -15,13 +15,11 @@ class Goblin : com.bugvm.apple.uikit.UIApplicationDelegateAdapter() {
     }
 
     override fun didFinishLaunching(application: com.bugvm.apple.uikit.UIApplication, launchOptions: com.bugvm.apple.uikit.UIApplicationLaunchOptions?): Boolean {
-        // Set up the view controller.
-        val rootViewController = GoblinViewController()
 
         // Create a new window at screen size.
         val window = com.bugvm.apple.uikit.UIWindow(com.bugvm.apple.uikit.UIScreen.getMainScreen().bounds)
         // Set the view controller as the root controller for the window.
-        window.setRootViewController(rootViewController)
+        window.setRootViewController(GoblinViewController())
         // Make the window visible.
         window.makeKeyAndVisible()
 
