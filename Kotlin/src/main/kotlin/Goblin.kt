@@ -33,9 +33,6 @@ class GoblinViewController : com.bugvm.apple.uikit.UIViewController() {
     private var clickCount: Int = 0
 
     init {
-        // Get the view of this view controller.
-        //val view = getView()
-
         // Setup background.
         view.backgroundColor = com.bugvm.apple.uikit.UIColor.green()
 
