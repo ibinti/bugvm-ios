@@ -24,7 +24,6 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(include: "*.jar", dir: "lib")
     compile "com.bugvm:bugvm-rt:${bugvm_version}"
     compile "com.bugvm:bugvm-apple:${bugvm_version}"
     compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
