@@ -34,7 +34,7 @@ class GoblinViewController : com.bugvm.apple.uikit.UIViewController() {
 
     init {
         // Get the view of this view controller.
-        val view = getView()
+        //val view = getView()
 
         // Setup background.
         view.backgroundColor = com.bugvm.apple.uikit.UIColor.green()
