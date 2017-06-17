@@ -49,7 +49,7 @@ class GoblinViewController : com.bugvm.apple.uikit.UIViewController() {
         button.titleLabel.font = com.bugvm.apple.uikit.UIFont.getBoldSystemFont(22.0)
         button.addOnTouchUpInsideListener { control: com.bugvm.apple.uikit.UIControl, event: com.bugvm.apple.uikit.UIEvent ->
 
-            label.text = "Number of try: " + ++clickCount
+            label.text = "Number of try: ${++clickCount}"
 
         }
         view.addSubview(button)
