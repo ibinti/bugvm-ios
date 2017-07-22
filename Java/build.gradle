@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        bugvm_version = "1.2.3"
+        bugvm_version = "1.2.4"
     }
     repositories {
         mavenLocal()
@@ -45,6 +45,6 @@ task dev {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "3.5"
+    gradleVersion = "3.5.1"
     distributionType = Wrapper.DistributionType.ALL
 }

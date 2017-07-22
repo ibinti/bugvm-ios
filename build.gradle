@@ -1,0 +1,14 @@
+/*
+ * bugvm-ios
+ */
+
+task listJars {
+    doLast {
+        configurations.runtime.each { File file -> println file.name }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "3.5.1"
+    distributionType = Wrapper.DistributionType.ALL
+}
