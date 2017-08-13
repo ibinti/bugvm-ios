@@ -36,6 +36,13 @@ task dev {
     dependsOn launchIOSDevice
 }
 
+task dist {
+    dependsOn createIPA
+    doLast {
+        println "The IPA should be in build/bugvm directory."
+    }
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = "4.1"
     distributionType = Wrapper.DistributionType.ALL
