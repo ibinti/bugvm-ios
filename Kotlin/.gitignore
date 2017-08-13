@@ -1,8 +1,0 @@
-.DS_Store
-*.iml
-.gradle
-build
-build-bugvm
-.idea
-*.hprof
-local.properties

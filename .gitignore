@@ -1,5 +1,6 @@
 .DS_Store
-.idea
 .gradle
+.idea
+bin
 build
-local.properties
+bugvm-ios.iml
