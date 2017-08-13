@@ -1,6 +1,3 @@
-/*
- * bugvm-ios
- */
 buildscript {
     ext {
         bugvm_version = "1.2.5"
@@ -28,21 +25,15 @@ dependencies {
 }
 
 task sim {
-    dependsOn launchIPhoneSimulator, build, clean
-    launchIPhoneSimulator.mustRunAfter build
-    build.mustRunAfter clean
+    dependsOn launchIPhoneSimulator
 }
 
 task pad {
-    dependsOn launchIPadSimulator, build, clean
-    launchIPhoneSimulator.mustRunAfter build
-    build.mustRunAfter clean
+    dependsOn launchIPadSimulator
 }
 
 task dev {
-    dependsOn launchIOSDevice, build, clean
-    launchIOSDevice.mustRunAfter build
-    build.mustRunAfter clean
+    dependsOn launchIOSDevice
 }
 
 task wrapper(type: Wrapper) {
