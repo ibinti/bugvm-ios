@@ -1,3 +1,5 @@
+package com.bugvm.app
+
 import com.bugvm.apple.uikit.UIApplicationDelegateAdapter
 import com.bugvm.apple.uikit.UIApplication
 import com.bugvm.apple.uikit.UIApplicationLaunchOptions
@@ -15,17 +17,17 @@ import com.bugvm.apple.uikit.UIFont
 import com.bugvm.apple.uikit.UIControl
 import com.bugvm.apple.uikit.UIEvent
 
-class LadyBug : UIApplicationDelegateAdapter() {
+class BugVM : UIApplicationDelegateAdapter() {
 
     override fun didFinishLaunching(application: UIApplication, launchOptions: UIApplicationLaunchOptions?): Boolean {
         val window = UIWindow(UIScreen.getMainScreen().bounds)
-        window.rootViewController = LadyBugViewController()
+        window.rootViewController = BugVMViewController()
         window.makeKeyAndVisible()
         return true
     }
 }
 
-class LadyBugViewController : UIViewController() {
+class BugVMViewController : UIViewController() {
     private var clickCount: Int = 0
 
     init {
