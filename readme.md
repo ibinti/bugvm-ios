@@ -1,4 +1,4 @@
-# BugVM iOS Example
+# BugVM iOS Demo App
 
 ### Git Clone
 
