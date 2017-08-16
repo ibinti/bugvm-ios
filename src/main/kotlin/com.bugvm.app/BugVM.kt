@@ -1,21 +1,21 @@
 package com.bugvm.app
 
-import com.bugvm.apple.uikit.UIApplicationDelegateAdapter
-import com.bugvm.apple.uikit.UIApplication
-import com.bugvm.apple.uikit.UIApplicationLaunchOptions
-import com.bugvm.apple.uikit.UIWindow
-import com.bugvm.apple.uikit.UIScreen
-import com.bugvm.apple.uikit.UIViewController
-import com.bugvm.apple.uikit.UIColor
-import com.bugvm.apple.uikit.UILabel
 import com.bugvm.apple.coregraphics.CGRect
 import com.bugvm.apple.uikit.NSTextAlignment
+import com.bugvm.apple.uikit.UIApplication
+import com.bugvm.apple.uikit.UIApplicationDelegateAdapter
+import com.bugvm.apple.uikit.UIApplicationLaunchOptions
 import com.bugvm.apple.uikit.UIButton
 import com.bugvm.apple.uikit.UIButtonType
-import com.bugvm.apple.uikit.UIControlState
-import com.bugvm.apple.uikit.UIFont
+import com.bugvm.apple.uikit.UIColor
 import com.bugvm.apple.uikit.UIControl
+import com.bugvm.apple.uikit.UIControlState
 import com.bugvm.apple.uikit.UIEvent
+import com.bugvm.apple.uikit.UIFont
+import com.bugvm.apple.uikit.UILabel
+import com.bugvm.apple.uikit.UIScreen
+import com.bugvm.apple.uikit.UIViewController
+import com.bugvm.apple.uikit.UIWindow
 
 class BugVM : UIApplicationDelegateAdapter() {
 
