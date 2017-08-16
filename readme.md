@@ -1,11 +1,10 @@
-# BugVM iOS Example
+# BugVM iOS Demo App
 
 ### Git Clone
 
 ```
 git clone https://github.com/bugvm/bugvm-ios
 cd bugvm-ios
-
 ```
 
 System requirements: Minimum iOS 7, macOS 10.12, Xcode 8.3 and JDK 8
