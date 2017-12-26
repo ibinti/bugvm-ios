@@ -7,29 +7,29 @@ git clone https://github.com/ibinti/bugvm-ios
 cd bugvm-ios
 ```
 
-System requirements: Minimum iOS 7, macOS 10.12, Xcode 9 and JDK 8
+System requirements: Minimum iOS 7, macOS 10.13, Xcode 9.2 and JDK 8
 
 
 ### Launch the app to the iPhone Simulator
 
 ```
-./gradlew -q sim
+./gradlew sim
 ```
 
 ### Launch the app to the iPad Simulator
 
 ```
-./gradlew -q pad
+./gradlew pad
 ```
 
 ### Install the app to the connected iPhone or iPad
 
 ```
-./gradlew -q dev
+./gradlew dev
 ```
 
 ### Package the app for the App Store distribution
 
 ```
-./gradlew -q dist
+./gradlew dist
 ```
