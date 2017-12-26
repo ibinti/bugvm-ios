@@ -60,6 +60,13 @@ task pad {
     build.mustRunAfter clean
 }
 
+/*
+In order to install to device or to package for the app store, one needs to follow Apple's
+signing requirements. Easy way to setup signing and all is to create a sample iOS project
+with Xcode. Xcode will advise you if something is missing or not correct.
+Once Xcode can build and upload to the iTunes Connect, all setup is good. 
+*/
+
 task dev {
     dependsOn launchIOSDevice, build, clean
     launchIOSDevice.mustRunAfter build
