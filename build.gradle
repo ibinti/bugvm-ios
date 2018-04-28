@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        bugvm_version = "1.2.8-SNAPSHOT"
-        kotlin_version = "1.2.30"
+        bugvm_version = "1.2.9"
+        kotlin_version = "1.2.40"
     }
     repositories {
         mavenLocal()
@@ -90,6 +90,6 @@ gradle.taskGraph.whenReady { graph ->
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "4.6"
+    gradleVersion = "4.7"
     distributionType = Wrapper.DistributionType.ALL
 }
