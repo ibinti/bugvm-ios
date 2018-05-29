@@ -1,0 +1,95 @@
+buildscript {
+    ext {
+        bugvm_version = "1.2.9"
+        kotlin_version = "1.2.41"
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+    dependencies {
+        classpath "com.bugvm:bugvm-gradle:$bugvm_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: "bugvm"
+apply plugin: "kotlin"
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+dependencies {
+    compile "com.bugvm:bugvm-rt:$bugvm_version"
+    compile "com.bugvm:bugvm-apple:$bugvm_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3"
+}
+
+task sim {
+    dependsOn launchIPhoneSimulator, build, clean
+    launchIPhoneSimulator.mustRunAfter build
+    build.mustRunAfter clean
+}
+
+task pad {
+    dependsOn launchIPadSimulator, build, clean
+    launchIPadSimulator.mustRunAfter build
+    build.mustRunAfter clean
+}
+
+/*
+In order to install to device or to package for the app store, one needs to follow Apple's
+signing requirements. Easy way to setup signing and all is to create a sample iOS project
+with Xcode. Xcode will advise you if something is missing or not correct.
+Once Xcode can build and upload to the iTunes Connect, all setup is good.
+*/
+
+task dev {
+    dependsOn launchIOSDevice, build, clean
+    launchIOSDevice.mustRunAfter build
+    build.mustRunAfter clean
+}
+
+task dist {
+    dependsOn createIPA
+    doLast {
+        println "The IPA should be in build/bugvm directory."
+    }
+}
+
+gradle.taskGraph.whenReady { graph ->
+    if (graph.hasTask(dev)) {
+        bugvm.iosSignIdentity = "iPhone Developer"
+    } else
+    if (graph.hasTask(dist)) {
+        bugvm.iosSignIdentity = "iPhone Distribution"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.7"
+    distributionType = Wrapper.DistributionType.ALL
+}
