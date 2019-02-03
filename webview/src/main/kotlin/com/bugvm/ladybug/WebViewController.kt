@@ -41,7 +41,7 @@ class WebViewController : UIViewController() {
         btnBugVM.addOnTouchDownListener({ control: UIControl, event: UIEvent ->
             btnBugVM.setBackgroundColor(UIColor.clear())
 
-            webView?.loadRequest(NSURLRequest(NSURL("https://bugvm.com")))
+            webView?.loadRequest(NSURLRequest(NSURL("https://ibinti.com/bugvm")))
 
         })
         btnBugVM.addOnTouchUpInsideListener({ control: UIControl, event: UIEvent ->
@@ -76,7 +76,7 @@ class WebViewController : UIViewController() {
 
             }
         }))
-        val URL = NSURL("https://bugvm.com")
+        val URL = NSURL("https://ibinti.com/bugvm")
         webView?.loadRequest(NSURLRequest(URL))
         webView?.setHidden(true)
 
@@ -90,7 +90,7 @@ class WebViewController : UIViewController() {
         btnGithub.addOnTouchDownListener({ control: UIControl, event: UIEvent ->
             btnGithub.setBackgroundColor(UIColor.clear())
 
-            webView?.loadRequest(NSURLRequest(NSURL("https://github.com/bugvm")))
+            webView?.loadRequest(NSURLRequest(NSURL("https://github.com/ibinti/bugvm")))
 
         })
         btnGithub.addOnTouchUpInsideListener({ control: UIControl, event: UIEvent ->
