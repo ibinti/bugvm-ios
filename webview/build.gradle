@@ -6,11 +6,11 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url("https://oss.sonatype.org/content/repositories/snapshots") }
     }
     dependencies {
-        classpath "com.bugvm:bugvm-gradle:$bugvm_version"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("com.bugvm:bugvm-gradle:$bugvm_version")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 
@@ -20,14 +20,14 @@ apply plugin: "kotlin"
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url("https://oss.sonatype.org/content/repositories/snapshots") }
 }
 
 dependencies {
-    compile "com.bugvm:bugvm-rt:$bugvm_version"
-    compile "com.bugvm:bugvm-apple:$bugvm_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3"
+    compile("com.bugvm:bugvm-rt:$bugvm_version")
+    compile("com.bugvm:bugvm-apple:$bugvm_version")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
+    compile("org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.3")
 }
 
 task sim {
@@ -58,7 +58,7 @@ task dev {
 task dist {
     dependsOn createIPA
     doLast {
-        println "The IPA should be in build/bugvm directory."
+        println("The IPA should be in build/bugvm directory.")
     }
 }
 
