@@ -1,7 +1,7 @@
 buildscript {
     ext {
         bugvm_version = "1.2.9"
-        kotlin_version = "1.2.41"
+        kotlin_version = "1.3.30"
     }
     repositories {
         mavenLocal()
@@ -16,24 +16,6 @@ buildscript {
 
 apply plugin: "bugvm"
 apply plugin: "kotlin"
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
-}
-
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
 
 repositories {
     mavenLocal()
@@ -89,7 +71,4 @@ gradle.taskGraph.whenReady { graph ->
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "4.7"
-    distributionType = Wrapper.DistributionType.ALL
-}
+//./gradlew wrapper --gradle-version 5.4 --distribution-type all
